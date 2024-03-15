@@ -6,21 +6,21 @@ import PageLink from '../components/PageLink.astro'
 <header class="col-span-full bg-primary row-start-1 bg-regal-blue row-span-1 text-text flex items-center justify-between px-5">
 
         <h3 class="text-xl font-bold uppercase tracking-widest">
-            <a href="/">kerolous amged</a>
+            <PageLink linkLabel='kerolous amged' linkRef='/'  isPadding={false} canHighlight={false} />
         </h3>
         <nav class="text-md self-stretch flex">
             <menu class="flex">
                 <li class="border-r border-l border-slate-600 ">
-                    <PageLink linkLabel='hello' linkRef=''  />
+                    <PageLink linkLabel='hello' linkRef='/'  />
                 </li>
                 <li class="border-r border-l border-slate-600 ">
-                    <PageLink linkLabel='projects' linkRef='projects'  />
+                    <PageLink linkLabel='projects' linkRef='/projects'  />
                 </li>
                 <li class="border-r border-l border-slate-600 ">
-                    <PageLink linkLabel='blogs' linkRef='blogs'  />
+                    <PageLink linkLabel='blogs' linkRef='/blogs'  />
                 </li>
               
             </menu>
         </nav>
-        <PageLink isPadding={false} linkLabel='contact-me' linkRef='contact-me'  />
+        <PageLink isPadding={false} linkLabel='contact-me' linkRef='/contact-me'  />
 </header>

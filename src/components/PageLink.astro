@@ -5,15 +5,14 @@ interface Props {
   linkLabel: string;
   linkRef : string;
   isPadding? : boolean;
+  canHighlight? : boolean;
 }
-const {linkRef  , linkLabel , isPadding = true}  = Astro.props
+const { linkRef  , linkLabel , isPadding = true , canHighlight = true }  = Astro.props
+const { pathname } = Astro.url;
 
-const pathname = new URL(Astro.request.url).pathname;
+const isActive = linkRef === pathname || linkRef === pathname.replace(/\/$/, '');
 
-const currentPath = pathname.slice(1);
 
-const isActive = currentPath === linkRef;
 ---
 
-
-<a class:list={["h-full flex items-center" , {'text-blue-500' : isActive } , {"px-10" : isPadding}]} href={`/${linkRef}`}>{prefixWith(linkLabel , '_')}</a>
+<a class:list={["h-full flex items-center" , {'text-blue-500' : isActive && canHighlight } , {"px-10" : isPadding}]} href={linkRef}>{prefixWith(linkLabel , '_')}</a>
