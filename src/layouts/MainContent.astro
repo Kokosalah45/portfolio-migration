@@ -6,6 +6,6 @@ interface Props {
 const { isFullSpan = false } = Astro.props;
 ---
 
-<main class:list={["row-start-2" , "row-end-3" , {"col-span-full" : isFullSpan } , {"col-start-2" : !isFullSpan} , "bg-teal-900"]}>
+<main class:list={["row-start-2" , "row-end-3" , {"col-span-full" : isFullSpan } , {"col-start-2" : !isFullSpan}]}>
 	<slot />
 </main>

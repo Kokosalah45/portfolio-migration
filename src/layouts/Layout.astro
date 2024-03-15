@@ -21,7 +21,9 @@ import { ViewTransitions } from 'astro:transitions';
 		<ViewTransitions />
 
 	</head>
-	<body class="grid grid-rows-layout grid-cols-layout h-screen bg-secondary"> 
+	<body class="grid grid-rows-layout grid-cols-layout h-screen " style={{
+		background : "radial-gradient(circle at center, #1D2B3B, #0F161E)"
+	}}> 
 		<MainHeader/>
 		<slot name="sub-header"/>
 		<slot name="main">
