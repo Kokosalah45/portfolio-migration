@@ -1,3 +1,11 @@
-<main class="row-start-2 row-end-3 col-start-2 col-end-3">
-   <slot />
+---
+
+interface Props {
+    isFullSpan?: boolean;
+}
+const { isFullSpan = false } = Astro.props;
+---
+
+<main class:list={["row-start-2" , "row-end-3" , {"col-span-full" : isFullSpan } , {"col-start-2" : !isFullSpan} , "bg-teal-900"]}>
+	<slot />
 </main>

@@ -7,9 +7,10 @@ export default {
 			colors: {
 				'primary': 'rgb(14 19 25)',
 				'secondary': 'rgb(16 23 31)',
+				text : 'rgb(102 110 119)'
 			  },
 			gridTemplateRows:{
-				'layout': '60px 1fr',
+				'layout': '45px 1fr',
 			},
 			gridTemplateColumns:{
 				'layout': '250px 1fr',
