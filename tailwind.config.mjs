@@ -5,20 +5,21 @@ export default {
 	theme: {
 		extend: {
 			colors: {
-				primary: 'rgb(14 19 25)',
-				secondary: 'rgb(16 23 31)',
-				title : '#FFF',
-				subtitle : '#7a9fbb',
-				separator : '#272f3c',
-				'regular-text' : '#848d94',
-				'secondary-text' : '#333d48',
-				'text-active' : '#c0aa82',
-				'separator-active' : '#a0525f',
+				primary: 'rgb(4, 6, 10)',
+				secondary: 'rgb(17, 24, 32)',
+				title : 'rgb(255,255,255)',
+				subtitle : 'rgb(127, 202, 255)',
+				separator : 'rgb(31, 40, 54)',
+				'regular-text' : 'rgb(112, 135, 158)',
+				'secondary-text' : 'rgb(138, 148, 159)',
+				'text-active' : 'rgb(232, 180, 79)',
+				'separator-active' : 'rgb(196, 70, 80)',
+
 
 			  },
 			
 			gridTemplateRows:{
-				'layout': '45px 1fr',
+				'layout': '45px 1fr',	
 			},
 			gridTemplateColumns:{
 				'layout': '250px 1fr 250px',

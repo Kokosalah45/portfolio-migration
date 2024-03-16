@@ -1,18 +1,33 @@
 ---
-import prefixWith from "../utils/prefixWith";
+import prefixWith from '../utils/prefixWith';
 
 interface Props {
-  linkLabel: string;
-  linkRef : string;
-  isPadding? : boolean;
-  canHighlight? : boolean;
+	linkLabel: string;
+	linkRef: string;
+	isPadding?: boolean;
+	canHighlight?: boolean;
 }
-const { linkRef  , linkLabel , isPadding = true , canHighlight = true }  = Astro.props
+const {
+	linkRef,
+	linkLabel,
+	isPadding = true,
+	canHighlight = true,
+} = Astro.props;
 const { pathname } = Astro.url;
 
-const isActive = linkRef === pathname || linkRef === pathname.replace(/\/$/, '');
-
-
+const isActive =
+	linkRef === pathname || linkRef === pathname.replace(/\/$/, '');
 ---
 
-<a class:list={["h-full flex items-center" , {'text-text-active border-b border-separator-active' : isActive && canHighlight } , {"px-10" : isPadding}]} href={linkRef}>{prefixWith(linkLabel , '_')}</a>
+<a
+	class:list={[
+		'h-full flex items-center transition-all',
+		{
+			'text-text-active border-b border-separator-active':
+				isActive && canHighlight,
+		},
+		{ 'px-10': isPadding },
+		{ 'hover:text-text-active hover:bg-secondary': canHighlight },
+	]}
+	href={linkRef}>{prefixWith(linkLabel, '_')}</a
+>
