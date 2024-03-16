@@ -15,4 +15,4 @@ const isActive = linkRef === pathname || linkRef === pathname.replace(/\/$/, '')
 
 ---
 
-<a class:list={["h-full flex items-center" , {'text-blue-500' : isActive && canHighlight } , {"px-10" : isPadding}]} href={linkRef}>{prefixWith(linkLabel , '_')}</a>
+<a class:list={["h-full flex items-center" , {'text-text-active border-b border-separator-active' : isActive && canHighlight } , {"px-10" : isPadding}]} href={linkRef}>{prefixWith(linkLabel , '_')}</a>

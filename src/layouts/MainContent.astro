@@ -1,11 +1,22 @@
 ---
-
 interface Props {
-    isFullSpan?: boolean;
+	isFullSpan?: boolean;
 }
 const { isFullSpan = false } = Astro.props;
 ---
 
-<main class:list={["row-start-2" , "row-end-3" , {"col-span-full" : isFullSpan } , {"col-start-2" : !isFullSpan}]}>
+<main
+	class:list={[
+		'row-start-2',
+		'row-end-3',
+		{ 'col-span-full': isFullSpan },
+		{ 'col-start-2': !isFullSpan },
+	]}
+>
+	{
+		!isFullSpan && (
+			<div class='border-b border-separator h-10' />
+		)
+	}
 	<slot />
 </main>

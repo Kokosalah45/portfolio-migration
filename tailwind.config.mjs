@@ -10,10 +10,10 @@ export default {
 				title : '#FFF',
 				subtitle : '#7a9fbb',
 				separator : '#272f3c',
-				text : '#848d94',
+				'regular-text' : '#848d94',
 				'secondary-text' : '#333d48',
-				'active-text' : '#b5a07a',
-				'sperator-hightlight' : '#8d4551',
+				'text-active' : '#c0aa82',
+				'separator-active' : '#a0525f',
 
 			  },
 			
