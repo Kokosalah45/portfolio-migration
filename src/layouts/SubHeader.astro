@@ -1,16 +1,13 @@
 ---
-import prefixWith from '../utils/prefixWith.ts'
+interface Props {
+    isLeft? : boolean
+}
 
-const {pathname} = Astro.url
+const {isLeft = true} = Astro.props
 
-const cleanedPathname = pathname.slice(1)
 
-const prefixedPathname = prefixWith(cleanedPathname, '//')
 ---
 
-<header class="row-start-2 row-end-3 col-start-1 col-end-2 border-r border-separator">
-    <div class="border-b border-separator px-4 h-10 flex items-center text-lg text-title font-semibold">
-        {prefixedPathname}
-    </div>
+<header class:list={["row-start-2 row-end-3  border-separator" , {"col-start-1 col-end-2 border-r" : isLeft} , {"col-start-3 col-end-4 border-l" : !isLeft}]}>
     <slot/>
 </header>

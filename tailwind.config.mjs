@@ -21,8 +21,9 @@ export default {
 				'layout': '45px 1fr',
 			},
 			gridTemplateColumns:{
-				'layout': '250px 1fr',
+				'layout': '250px 1fr 250px',
 			},
+			
 			
 		},
 	},

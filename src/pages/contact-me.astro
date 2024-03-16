@@ -2,18 +2,23 @@
 import Layout from '../layouts/Layout.astro';
 import SubHeader from '../layouts/SubHeader.astro';
 import MainContent from '../layouts/MainContent.astro';
+import CurrentRouteViewer from '../components/CurrentRouteViewer.astro';
+import SizedBox from '../components/SizedBox.astro';
+
 
 ---
 
 <Layout title='Hello to My Portfolio'>
 	<slot slot='sub-header'>
 		<SubHeader>
-			<h1>Welcome to Astro</h1>
-			<p>Build faster websites with less client-side JavaScript</p>
+			<SizedBox classes="px-4 flex items-center text-lg text-title font-semibold">
+				<CurrentRouteViewer/>
+			</SizedBox>
 		</SubHeader>
 	</slot>
 	<slot slot='main'>
-		<MainContent >
+		<MainContent extendRight>
+			<SizedBox/>
 				<p>
 					Welcome to Astro! This is a simple example of a static site built with
 					Astro. You can find the source code for this site on{' '}

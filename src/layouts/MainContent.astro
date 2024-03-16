@@ -1,22 +1,23 @@
 ---
 interface Props {
 	isFullSpan?: boolean;
+	extendLeft? : boolean;
+	extendRight? : boolean;
 }
-const { isFullSpan = false } = Astro.props;
+const { isFullSpan = false  , extendLeft = false , extendRight = false} = Astro.props;
 ---
 
 <main
 	class:list={[
-		'row-start-2',
-		'row-end-3',
+		
+		'row-start-2 row-end-3 flex flex-col' ,
+		{'col-start-2 ' : !(isFullSpan || extendLeft )},
+		{'col-end-3' : !(isFullSpan  || extendRight)},
 		{ 'col-span-full': isFullSpan },
-		{ 'col-start-2': !isFullSpan },
+		{ 'col-start-1': !isFullSpan && extendLeft },
+		{ 'col-end-4': !isFullSpan && extendRight },
 	]}
 >
-	{
-		!isFullSpan && (
-			<div class='border-b border-separator h-10' />
-		)
-	}
+	
 	<slot />
 </main>
