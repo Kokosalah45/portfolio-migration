@@ -1,46 +1,45 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
+import { onMount } from "svelte";
 
-	type themes = 'system' | 'light' | 'dark' | '';
+type themes = "system" | "light" | "dark" | "";
 
-	export let currentTheme: themes = '';
+export let currentTheme: themes = "";
 
-	const addThemeClass = (theme: themes) => {
-		document.documentElement.removeAttribute('class');
-		switch (theme) {
-			case 'system':
-				document.documentElement.classList.add(getSystemTheme());
-				break;
-			case 'dark':
-				document.documentElement.classList.add('dark');
-				break;
-		}
-	};
+const addThemeClass = (theme: themes) => {
+	document.documentElement.removeAttribute("class");
+	switch (theme) {
+		case "system":
+			document.documentElement.classList.add(getSystemTheme());
+			break;
+		case "dark":
+			document.documentElement.classList.add("dark");
+			break;
+	}
+};
 
-	$: isActiveTheme = (theme: themes) => {
-		return currentTheme === theme;
-	};
+$: isActiveTheme = (theme: themes) => {
+	return currentTheme === theme;
+};
 
-	const saveTheme = (theme: themes) => {
-		localStorage.setItem('theme', theme);
-	};
-	const getSystemTheme = () => {
-		const theme = window.matchMedia('(prefers-color-scheme: dark)').matches
-			? 'dark'
-			: 'light';
-		return theme;
-	};
+const saveTheme = (theme: themes) => {
+	localStorage.setItem("theme", theme);
+};
+const getSystemTheme = () => {
+	const theme = window.matchMedia("(prefers-color-scheme: dark)").matches
+		? "dark"
+		: "light";
+	return theme;
+};
 
-	onMount(() => {
-		const savedTheme = localStorage.getItem('theme') as themes | null;
-		console.log({savedTheme})
-		const isGetSytemTheme = savedTheme === 'system' || savedTheme === null;
-		const theme = isGetSytemTheme ? getSystemTheme() : savedTheme;
+onMount(() => {
+	const savedTheme = localStorage.getItem("theme") as themes | null;
+	console.log({ savedTheme });
+	const isGetSytemTheme = savedTheme === "system" || savedTheme === null;
+	const theme = isGetSytemTheme ? getSystemTheme() : savedTheme;
 
-		currentTheme = theme;
-		addThemeClass(theme);
-	});
-
+	currentTheme = theme;
+	addThemeClass(theme);
+});
 </script>
 
 <menu>

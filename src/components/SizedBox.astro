@@ -1,10 +1,9 @@
 
 ---
 interface Props {
-    classes? : string
-} 
-const {classes = ""} = Astro.props
-
+	classes?: string;
+}
+const { classes = "" } = Astro.props;
 ---
 <div class={`border-b border-separator h-10 ${classes}`}>
     <slot/>

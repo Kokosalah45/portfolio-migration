@@ -1,5 +1,5 @@
 ---
-import prefixWith from '../utils/prefixWith';
+import prefixWith from "../utils/prefixWith";
 
 interface Props {
 	linkLabel: string;
@@ -16,7 +16,7 @@ const {
 const { pathname } = Astro.url;
 
 const isActive =
-	linkRef === pathname || linkRef === pathname.replace(/\/$/, '');
+	linkRef === pathname || linkRef === pathname.replace(/\/$/, "");
 ---
 
 <a

@@ -1,11 +1,9 @@
 ---
 interface Props {
-    isLeft? : boolean
+	isLeft?: boolean;
 }
 
-const {isLeft = true} = Astro.props
-
-
+const { isLeft = true } = Astro.props;
 ---
 
 <header class:list={["row-start-2 row-end-3  border-separator" , {"col-start-1 col-end-2 border-r" : isLeft} , {"col-start-3 col-end-4 border-l" : !isLeft}]}>

@@ -1,13 +1,11 @@
 ---
-import prefixWith from '../utils/prefixWith'
+import prefixWith from "../utils/prefixWith";
 
+const { pathname } = Astro.url;
 
-const {pathname} = Astro.url
+const cleanedPathname = pathname.slice(1);
 
-const cleanedPathname = pathname.slice(1)
-
-const prefixedPathname = prefixWith(cleanedPathname, '//')
-
+const prefixedPathname = prefixWith(cleanedPathname, "//");
 ---
 
 
