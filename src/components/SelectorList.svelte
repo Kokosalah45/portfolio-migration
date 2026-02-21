@@ -33,7 +33,6 @@ const getSystemTheme = () => {
 
 onMount(() => {
 	const savedTheme = localStorage.getItem("theme") as themes | null;
-	console.log({ savedTheme });
 	const isGetSytemTheme = savedTheme === "system" || savedTheme === null;
 	const theme = isGetSytemTheme ? getSystemTheme() : savedTheme;
 

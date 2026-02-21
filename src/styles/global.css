@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+@theme {
+	--color-primary: rgb(4, 6, 10);
+	--color-secondary: rgb(17, 24, 32);
+	--color-title: rgb(255, 255, 255);
+	--color-subtitle: rgb(127, 202, 255);
+	--color-separator: rgb(31, 40, 54);
+	--color-regular-text: rgb(112, 135, 158);
+	--color-secondary-text: rgb(138, 148, 159);
+	--color-text-active: rgb(232, 180, 79);
+	--color-separator-active: rgb(196, 70, 80);
+
+	--grid-template-rows-layout: 45px 1fr;
+	--grid-template-columns-layout: 250px 1fr 250px;
+}

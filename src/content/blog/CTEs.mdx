@@ -51,7 +51,7 @@ Calculate the average grade for the students. Then for every student with the av
 IMPORTANT NOTE : Can be Done with a simple HAVING clause 
 #### Solving using a sub-query:
 
-```SQL
+```pgsql
 SELECT  first_name,
         last_name,
         average_grade,
@@ -69,7 +69,7 @@ WHERE average_grade > 8.5;
 
 #### Solving using a CTE :
 
-```SQL
+```pgsql
 WITH grade_average AS ( 
 SELECT  s.id, 
 		s.first_name, 
@@ -110,7 +110,7 @@ show the name of the subjects and their respective average and minimum grades, b
     
 #### Solving with a sub-query:
 
-```SQL
+```pgsql
 SELECT  sa.id,
         sa.subject_name,
         sa.subject_average_grade
@@ -134,7 +134,7 @@ JOIN (
 ```
 #### Solving using a CTE :
 
-```SQL
+```pgsql
 WITH subject_average AS ( 
 SELECT su.id, 
 su.subject_name, 
@@ -173,7 +173,7 @@ JOIN min_grade m ON sa.id =m.id;
     - Calculate the average of the minimum and maximum grades using the `AVG` function.
 #### Solving with a sub-query:
 
-```SQL
+```pgsql
 SELECT      
 		AVG (min_grade) AS avg_min_grade,
         AVG (max_grade) AS avg_max_grade
@@ -189,7 +189,7 @@ SELECT  su.id,
 
 #### Solving with a CTE:
 
-```SQL
+```pgsql
 WITH min_max_grade AS (
 SELECT      su.id,
         MIN (e.grade) AS min_grade,
