@@ -16,6 +16,7 @@ const pgsqlGrammar = readFileSync(
 const pgsqlGrammarJson = JSON.parse(pgsqlGrammar);
 // https://astro.build/config
 export default defineConfig({
+	output: "server",
 	i18n: {
 		defaultLocale: "en",
 		locales: ["en", "es", "pt-br"],

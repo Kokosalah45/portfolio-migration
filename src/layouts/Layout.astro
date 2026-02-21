@@ -5,7 +5,7 @@ interface Props {
 
 const { title } = Astro.props;
 
-import { ViewTransitions } from "astro:transitions";
+import { ClientRouter } from "astro:transitions";
 import MainHeader from "./MainHeader.astro";
 
 import "../styles/global.css";
@@ -21,7 +21,7 @@ import "../styles/global.css";
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
-		<ViewTransitions />
+		<ClientRouter />
 
 	</head>
 	<body class="grid grid-rows-layout grid-cols-layout h-screen text-regular-text " style={{

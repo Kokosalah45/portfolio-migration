@@ -1,9 +1,10 @@
 ---
-import { Image } from "astro:assets";
 import type { CollectionEntry } from "astro:content";
 import { getCollection } from "astro:content";
 import Layout from "../../layouts/Layout.astro";
 import MainContent from "../../layouts/MainContent.astro";
+
+export const prerender = true;
 
 interface Props {
 	blog: CollectionEntry<"blog">;
